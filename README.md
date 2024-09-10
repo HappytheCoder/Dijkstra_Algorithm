@@ -43,23 +43,18 @@ To use this Dijkstra's algorithm, simply import the `dijkstra` function in your 
 Here’s an example of what the `nodes` dictionary looks like:
 
 ```python
-nodes = {
-    1: {
-        "coordinates": [[0, 8]],  # Coordinates for node 1
-        "inlinks": [[3], [5]],    # Nodes that link into node 1 (e.g., nodes 3 and 5)
-        "outlinks": [[2], [4]]    # Nodes that node 1 links out to (e.g., nodes 2 and 4)
-    },
-    2: {
-        "coordinates": [[10, 20]],  # Coordinates for node 2
-        "inlinks": [[1]],           # Node 1 links into node 2
-        "outlinks": [[3]]           # Node 2 links out to node 3
-    },
-    3: {
-        "coordinates": [[15, 25]],  # Coordinates for node 3
-        "inlinks": [[2]],           # Node 2 links into node 3
-        "outlinks": [[4]]           # Node 3 links out to node 4
+    nodes = {
+        1: {
+            "coordinates": [[0, 8]],  # Coordinates for node 1
+            "inlinks": [[6], [10]],    # links 6 and 10 end at node 1
+            "outlinks": [[1], [7], [15]    # links 1, 7 and 15 start at node 1
+        },
+        2: {
+            "coordinates": [[10, 20]],  # Coordinates for node 2
+            "inlinks": [[1], [11], [16]],   # link 1, 11 and 16 end at node 2
+            "outlinks": [[2], [9], [10]]   # links 2, 9 and 10 start at node 2
+        }
     }
-}
 ```
 
 ### Example of Sparse Travel Time Matrix
